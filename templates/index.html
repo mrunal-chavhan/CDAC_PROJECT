@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Match Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #0e3b43, #1c768f);
+            color: white;
+            padding: 10px;
+            margin: 0;
+            overflow: hidden;
+        }
+        h1 {
+            color: #f8f9fa;
+            font-size: 24px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 450px;
+            margin: 30px auto;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .container::-webkit-scrollbar {
+            display: none;
+        }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .logo {
+            width: 90px;
+            height: auto;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+        .form-group {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+            font-size: 14px;
+        }
+        select, input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .error-message {
+            color: #ff4d4d;
+            font-weight: bold;
+            margin-top: 5px;
+            display: none;
+        }
+        .reload-button {
+            background-color: #dc3545;
+            margin-top: 5px;
+        }
+        .reload-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Cricket Prediction Logo" class="logo">
+        </div>
+
+        <h1>Cricket Match Prediction</h1>
+
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="Batting Team">Batting Team:</label>
+                <select name="Batting Team">
+                    {% for team in batting_teams %}
+                        <option value="{{ team }}">{{ team }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Balling Team">Balling Team:</label>
+                <select name="Balling Team">
+                    {% for team in bowling_teams %}
+                        <option value="{{ team }}">{{ team }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Venue">Venue:</label>
+                <select name="Venue">
+                    {% for venue in venues %}
+                        <option value="{{ venue }}">{{ venue }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Pitch Type">Pitch Type:</label>
+                <select name="Pitch Type">
+                    {% for pitch in pitch_types %}
+                        <option value="{{ pitch }}">{{ pitch }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Match Date">Match Date:</label>
+                <input type="date" name="Match Date" id="matchDate" required>
+                <p class="error-message" id="dateError">⚠️ Matches are not conducted in December, January, or February. Please select a valid date.</p>
+            </div>
+
+            <div class="form-group">
+                <label for="Over number">Over Number:</label>
+                <input type="number" name="Over number" min="1" max="50" required>
+            </div>
+
+            <div class="form-group">
+                <label for="score after over">Score after Over:</label>
+                <input type="number" name="score after over" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="wickets after over">Wickets after Over:</label>
+                <input type="number" name="wickets after over" min="0" max="10" required>
+            </div>
+
+            <button type="submit" id="predictButton">Predict</button>
+        </form>
+
+        <a href="/">
+            <button class="reload-button">Reload</button>
+        </a>
+
+        {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+        {% endif %}
+        {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+    </div>
+
+    <script>
+        document.getElementById("matchDate").addEventListener("change", function() {
+            let selectedDate = new Date(this.value);
+            let month = selectedDate.getMonth() + 1;  // JavaScript months are 0-based
+
+            let errorElement = document.getElementById("dateError");
+            let predictButton = document.getElementById("predictButton");
+
+            if (month === 12 || month === 1 || month === 2) {
+                errorElement.style.display = "block";  // Show error message
+                predictButton.disabled = true;         // Disable Predict button
+            } else {
+                errorElement.style.display = "none";   // Hide error message
+                predictButton.disabled = false;        // Enable Predict button
+            }
+        });
+    </script>
+
+</body>
+</html>
