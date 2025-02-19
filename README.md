@@ -26,7 +26,7 @@ To build a model that predicts the inning score of a match based on match condit
 
 - **Live Prediction App**: [Try Here](http://13.60.202.76:5000/)  
 
-  ![image](https://github.com/user-attachments/assets/32de0c47-32df-4331-8937-fb80012a7c96)
+  ![image](https://github.com/mrunal-chavhan/CDAC_PROJECT/blob/main/UI/ui_image.png)
   
 
 # 🚦 Traffic Crashes Streaming & Analysis
