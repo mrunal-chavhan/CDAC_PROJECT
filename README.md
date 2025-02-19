@@ -24,6 +24,8 @@ To build a model that predicts the inning score of a match based on match condit
 - AWS Hosting: Ensures availability.
 - Tableau Dashboard: [View Here](https://public.tableau.com/views/Cricket_Score_Prediction_visualization/Dashboard2?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
+- **Live Prediction App**: [Try Here](http://13.60.202.76:5000/)  
+
   ![image](https://github.com/user-attachments/assets/32de0c47-32df-4331-8937-fb80012a7c96)
   
 
