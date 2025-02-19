@@ -36,7 +36,7 @@ This project processes real-time **traffic crashes data** using **Kafka, Spark, 
 
 ## 🔗 Dataset  
 - **Source**: [Traffic Crashes Data](https://catalog.data.gov/dataset/traffic-crashes-crashes)  
-- **Sample File**: [Download Here]()
+- **Sample File**: [Download Here](https://github.com/mrunal-chavhan/CDAC_PROJECT/blob/main/Comprehensive%20Analysis%20of%20Traffic%20Crashes%20-%20Big%20Data/data/US_traffic_sample.csv)
 
 ## ⚙️ Project Workflow  
 1️⃣ Kafka Producer reads traffic crash data from a local server and streams it.
@@ -58,20 +58,20 @@ This project processes real-time **traffic crashes data** using **Kafka, Spark, 
 ## 🚀 Setup Instructions  
 
 ### 1️⃣ Kafka Producer & Consumer  
-- **Producer Code**: [producer.py](kafka/producer.py)  
-- **Consumer Code**: [consumer_spark.py](kafka/consumer_spark.py)  
+- **Producer Code**: [producer.py](https://github.com/mrunal-chavhan/CDAC_PROJECT/blob/main/Comprehensive%20Analysis%20of%20Traffic%20Crashes%20-%20Big%20Data/kafka/producer%20(1).py)  
+- **Consumer Code**: [consumer_spark.py](https://github.com/mrunal-chavhan/CDAC_PROJECT/blob/main/Comprehensive%20Analysis%20of%20Traffic%20Crashes%20-%20Big%20Data/kafka/consumer_spark.py)  
 
 ### 2️⃣ Cassandra Table Schema  
-- **Schema File**: [schema.txt](cassandra/schema.txt)  
+- **Schema File**: [schema.txt](https://github.com/mrunal-chavhan/CDAC_PROJECT/blob/main/Comprehensive%20Analysis%20of%20Traffic%20Crashes%20-%20Big%20Data/Cassandra/schema.txt)  
 - **Stored Data Preview**:  
-  ![Cassandra Screenshot](https://github.com/mrunal-chavhan/CDAC_PROJECT/commit/105f8423e20fb0b4c69a2b3c5fc09faebb0cefbe#diff-cb50ead9aaa4137746202fdc9b0b2b0bc3cf626be681c530cb109348ae1761ff)
+  ![Cassandra Screenshot](https://github.com/mrunal-chavhan/CDAC_PROJECT/blob/main/Comprehensive%20Analysis%20of%20Traffic%20Crashes%20-%20Big%20Data/Cassandra/Cassandra_screenshots/Cassandra_1.jpeg)
 
 ### 3️⃣ Power BI Connection  
-- **ODBC Driver Download**: [ODBC Driver Link](powerbi/odbc_driver_link.txt)  
+- **ODBC Driver Download**: [ODBC Driver Link](https://github.com/mrunal-chavhan/CDAC_PROJECT/blob/main/Comprehensive%20Analysis%20of%20Traffic%20Crashes%20-%20Big%20Data/PowerBI/odbc_driver_link.txt)  
 - **Cassandra to Power BI Connection**:  
-  ![Power BI Connection](powerbi/connectivity_screenshots/powerbi_odbc.png)  
+  ![Power BI Connection](https://github.com/mrunal-chavhan/CDAC_PROJECT/blob/main/Comprehensive%20Analysis%20of%20Traffic%20Crashes%20-%20Big%20Data/PowerBI/Connectivity_screenshots/Connectivity_2.jpeg)  
 - **Power BI Dashboard Preview**:  
-  ![Power BI Dashboard](powerbi/powerbi_screenshots/dashboard.png)
+  ![Power BI Dashboard](https://github.com/mrunal-chavhan/CDAC_PROJECT/blob/main/Comprehensive%20Analysis%20of%20Traffic%20Crashes%20-%20Big%20Data/PowerBI/powerBI_screenshots/powerbi_4.jpeg)
 
 ---
 
