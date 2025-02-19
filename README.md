@@ -36,7 +36,7 @@ This project processes real-time **traffic crashes data** using **Kafka, Spark, 
 
 ## 🔗 Dataset  
 - **Source**: [Traffic Crashes Data](https://catalog.data.gov/dataset/traffic-crashes-crashes)  
-- **Sample File**: [Download Here](data/sample_data.csv)
+- **Sample File**: [Download Here]()
 
 ## ⚙️ Project Workflow  
 1️⃣ Kafka Producer reads traffic crash data from a local server and streams it.
@@ -64,7 +64,7 @@ This project processes real-time **traffic crashes data** using **Kafka, Spark, 
 ### 2️⃣ Cassandra Table Schema  
 - **Schema File**: [schema.txt](cassandra/schema.txt)  
 - **Stored Data Preview**:  
-  ![Cassandra Screenshot](cassandra/cassandra_screenshots/cassandra_table.png)
+  ![Cassandra Screenshot](https://github.com/mrunal-chavhan/CDAC_PROJECT/commit/105f8423e20fb0b4c69a2b3c5fc09faebb0cefbe#diff-cb50ead9aaa4137746202fdc9b0b2b0bc3cf626be681c530cb109348ae1761ff)
 
 ### 3️⃣ Power BI Connection  
 - **ODBC Driver Download**: [ODBC Driver Link](powerbi/odbc_driver_link.txt)  
